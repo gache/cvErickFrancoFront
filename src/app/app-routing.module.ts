@@ -9,12 +9,12 @@ import {PagenotfoundComponent} from './pagenotfound/pagenotfound.component';
 
 
 const routes: Routes = [
-  {path: 'home', component: HomeAdminComponent},
-  {path: 'projets', component: ProjetsAdminComponent},
-  {path: 'diplomes', component: DiplomeAdminComponent},
-  {path: 'experiences', component: ExperiencesAdminComponent},
-  {path: 'langages', component: LangagesAdminComponent},
-  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  {path: 'homeAdmin', component: HomeAdminComponent},
+  {path: 'projetsAdmin', component: ProjetsAdminComponent},
+  {path: 'diplomesAdmin', component: DiplomeAdminComponent},
+  {path: 'experiencesAdmin', component: ExperiencesAdminComponent},
+  {path: 'langagesAdmin', component: LangagesAdminComponent},
+  { path: '', pathMatch: 'full', redirectTo: 'homeAdmin' },
   { path: '**', component: PagenotfoundComponent },
 ];
 
