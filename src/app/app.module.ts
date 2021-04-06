@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
+
+// Composants
 import { AppComponent } from './app.component';
 import { NavbarAdminComponent } from './admin/navbar-admin/navbar-admin.component';
 import { DiplomeAdminComponent } from './admin/diplome-admin/diplome-admin.component';
