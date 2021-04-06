@@ -5,6 +5,7 @@ import {ProjetsAdminComponent} from './admin/projets-admin/projets-admin.compone
 import {ExperiencesAdminComponent} from './admin/experiences-admin/experiences-admin.component';
 import {LangagesAdminComponent} from './admin/langages-admin/langages-admin.component';
 import {HomeAdminComponent} from './admin/home-admin/home-admin.component';
+import {PagenotfoundComponent} from './pagenotfound/pagenotfound.component';
 
 
 const routes: Routes = [
@@ -14,7 +15,7 @@ const routes: Routes = [
   {path: 'experiences', component: ExperiencesAdminComponent},
   {path: 'langages', component: LangagesAdminComponent},
   { path: '', pathMatch: 'full', redirectTo: 'home' },
-  { path: '**', pathMatch: 'full', redirectTo: 'home' }
+  { path: '**', component: PagenotfoundComponent },
 ];
 
 @NgModule({

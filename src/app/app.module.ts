@@ -10,6 +10,7 @@ import { ExperiencesAdminComponent } from './admin/experiences-admin/experiences
 import { LangagesAdminComponent } from './admin/langages-admin/langages-admin.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeAdminComponent } from './admin/home-admin/home-admin.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { HomeAdminComponent } from './admin/home-admin/home-admin.component';
     LangagesAdminComponent,
     FooterComponent,
     HomeAdminComponent,
+    PagenotfoundComponent,
 
   ],
   imports: [
