@@ -9,6 +9,7 @@ import { ProjetsAdminComponent } from './admin/projets-admin/projets-admin.compo
 import { ExperiencesAdminComponent } from './admin/experiences-admin/experiences-admin.component';
 import { LangagesAdminComponent } from './admin/langages-admin/langages-admin.component';
 import { FooterComponent } from './footer/footer.component';
+import { HomeAdminComponent } from './admin/home-admin/home-admin.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { FooterComponent } from './footer/footer.component';
     ExperiencesAdminComponent,
     LangagesAdminComponent,
     FooterComponent,
+    HomeAdminComponent,
 
   ],
   imports: [
