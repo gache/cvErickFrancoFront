@@ -7,6 +7,8 @@ import { AdminComponent } from './admin/admin/admin.component';
 import { NavbarAdminComponent } from './admin/navbar-admin/navbar-admin.component';
 import { DiplomeAdminComponent } from './admin/diplome-admin/diplome-admin.component';
 import { ProjetsAdminComponent } from './admin/projets-admin/projets-admin.component';
+import { ExperiencesAdminComponent } from './admin/experiences-admin/experiences-admin.component';
+import { LangagesAdminComponent } from './admin/langages-admin/langages-admin.component';
 
 
 @NgModule({
@@ -16,6 +18,8 @@ import { ProjetsAdminComponent } from './admin/projets-admin/projets-admin.compo
     NavbarAdminComponent,
     DiplomeAdminComponent,
     ProjetsAdminComponent,
+    ExperiencesAdminComponent,
+    LangagesAdminComponent,
 
   ],
   imports: [
