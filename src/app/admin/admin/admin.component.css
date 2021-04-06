@@ -1,0 +1,15 @@
+/* les configuations de mon footer */
+
+.footer1 {
+  height: 70px;
+  background-color: #1a1e23;
+  color: #ffffff;
+  margin-top: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  background-color: #f2f2f2;
+}
