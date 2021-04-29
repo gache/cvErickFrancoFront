@@ -1,0 +1,55 @@
+<ul class="alert alert-danger" *ngIf="erreurs?.length > 0">
+    <li *ngFor="let err of erreurs">
+        {{ err }}
+    </li>
+</ul>
+
+<div class="container mt-5 py-5">
+    <div class="card">
+        <div class="card-header text-center "> {{ title }} </div>
+        <div class="card-body ">
+            <form action="" #utilisateurForm="ngForm">
+
+                <div class="form-group row">
+                    <label for="nomDiplome" class="col-form-label col-sm-2">Dîplome</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" name="nomDiplome" [(ngModel)]="diplome.nomDiplome">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="ecole" class="col-form-label col-sm-2"> Ecole</label>
+
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" name="ecole" [(ngModel)]="diplome.ecole">
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <label for="ville" class="col-form-label col-sm-2"> Ville</label>
+
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" name="ville" [(ngModel)]="diplome.ville">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="description" class="col-form-label col-sm-2"> Description</label>
+
+                    <div class="col-sm-6">
+                        <textarea name="message" id="message" cols="30" rows="10" maxlength="1000" placeholder="Message..." class="form-control" name="description" [(ngModel)]="diplome.description"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <button class="btn btn-primary" role="button" (click)='create()' *ngIf="!diplome.id else elseBlock" [disabled]="!utilisateurForm.form.valid">Crear</button>
+                        <ng-template #elseBlock>
+                            <button class="btn btn-primary" role="button" (click)='update()' [disabled]="!utilisateurForm.form.valid">Editer</button>
+                        </ng-template>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
