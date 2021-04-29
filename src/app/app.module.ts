@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Importation pour faire petitions Http
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 // Composants
 import { AppComponent } from './app.component';
@@ -22,6 +22,8 @@ import { HomeAdminComponent } from './admin/home-admin/home-admin.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { CreatediplomeComponent } from './admin/create/creatediplome/creatediplome.component';
 import { LoginComponent } from './utilisateur/login/login.component';
+import { TokenInterceptor } from './utilisateur/interceptors/token.interceptor';
+import { AuthInterceptor } from './utilisateur/interceptors/auth.interceptor';
 
 
 
@@ -47,7 +49,9 @@ import { LoginComponent } from './utilisateur/login/login.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
+  { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 } )
 export class AppModule { }

@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, throwError } from 'rxjs';
@@ -14,7 +14,6 @@ export class DiplomeService {
 
   private url = "http://localhost:8080/api/diplomes";
 
-  private httpHeaders = new HttpHeaders( { 'Content-Type': 'application/json' } )
 
   // methode pour avoir la liste de diplome
   public getAllDiplome (): Observable<IDiplome[]> {
@@ -23,13 +22,13 @@ export class DiplomeService {
 
   // methode pour créer un diplome
   public create ( diplome: Diplome ): Observable<Diplome> {
-    return this.Http.post<Diplome>( this.url, diplome ).pipe(
+    return this.Http.post( this.url, diplome ).pipe(
       map( ( response: any ) => response.diplome as Diplome ),
       catchError( e => {
         if ( e.status == 400 ) {
           return throwError( e );
         }
-        if ( e.errors.message ) {
+        if ( e.error.message ) {
           console.error( e.error.message );
         }
         return throwError( e );
@@ -48,13 +47,13 @@ export class DiplomeService {
       } ) );
   }
 
-  public update ( diplome: Diplome ): Observable<Diplome> {
-    return this.Http.put<Diplome>( `${this.url}/${diplome.id}`, diplome ).pipe(
+  public update ( diplome: Diplome ): Observable<any> {
+    return this.Http.put<any>( `${this.url}/${diplome.id}`, diplome ).pipe(
       catchError( e => {
         if ( e.status == 400 ) {
           return throwError( e );
         }
-        if ( e.errors.message ) {
+        if ( e.error.message ) {
           console.error( e.errors.message );
         }
         return throwError( e );

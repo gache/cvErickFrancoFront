@@ -20,10 +20,11 @@
                         <th scope="row">{{ item.id }}</th>
                         <td>{{ item.nomDiplome }}</td>
                         <td>{{ item.description }}</td>
-                        <td *ngIf="authService.hasRole('ROLE_ADMIN')">
+                        <!-- *ngIf="authService.hasRole('ROLE_ADMIN')" -->
+                        <td>
                             <button class="btn btn-sm btn-outline-success" [routerLink]="['/createDiplome/form', item.id]"><i class="far fa-edit"></i></button>
                         </td>
-                        <td *ngIf="authService.hasRole('ROLE_ADMIN')">
+                        <td>
                             <button class="btn btn-sm btn-outline-danger">
                 <i class="far fa-trash-alt"></i>
               </button>

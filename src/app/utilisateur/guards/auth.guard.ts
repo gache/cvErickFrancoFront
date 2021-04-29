@@ -14,7 +14,7 @@ export class AuthGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot ): Observable<boolean> | Promise<boolean> | boolean {
     if ( this.authService.isAuthenticated() ) {
-      if ( this.isTokenExpirado() ) {
+      if ( this.isTokenExpirer() ) {
         this.authService.logout();
         this.router.navigate( ['/login'] );
         return false;
@@ -25,11 +25,11 @@ export class AuthGuard implements CanActivate {
     return false;
   }
 
-  isTokenExpirado (): boolean {
+  isTokenExpirer (): boolean {
     let token = this.authService.token;
     let payload = this.authService.avoirDonneeToken( token );
-    let now = new Date().getTime() / 1000;
-    if ( payload.exp < now ) {
+    let dateActuelle = new Date().getTime() / 1000;
+    if ( payload.exp < dateActuelle ) {
       return true;
     }
     return false;

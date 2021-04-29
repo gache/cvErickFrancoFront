@@ -1,8 +1,14 @@
+<ul class="alert alert-danger" *ngIf="erreurs?.length > 0">
+    <li *ngFor="let err of erreurs">
+        {{ err }}
+    </li>
+</ul>
+
 <div class="container mt-5 py-5">
     <div class="card">
         <div class="card-header text-center "> {{ title }} </div>
         <div class="card-body ">
-            <form action="">
+            <form action="" #utilisateurForm="ngForm">
 
                 <div class="form-group row">
                     <label for="nomDiplome" class="col-form-label col-sm-2">Dîplome</label>
@@ -36,9 +42,9 @@
 
                 <div class="form-group row">
                     <div class="col-sm-6">
-                        <button class="btn btn-primary" role="button" (click)='create()' *ngIf="!diplome.id else elseBlock">Créer</button>
+                        <button class="btn btn-primary" role="button" (click)='create()' *ngIf="!diplome.id else elseBlock" [disabled]="!utilisateurForm.form.valid">Crear</button>
                         <ng-template #elseBlock>
-                            <button class="btn btn-primary" role="button" (click)='update()'>Editer</button>
+                            <button class="btn btn-primary" role="button" (click)='update()' [disabled]="!utilisateurForm.form.valid">Editer</button>
                         </ng-template>
                     </div>
                 </div>

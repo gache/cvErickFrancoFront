@@ -36,6 +36,8 @@ export class CreatediplomeComponent implements OnInit {
   }
 
   public create (): void {
+    console.log( this.diplome );
+
     this.diplomeService.create( this.diplome ).subscribe(
       respon => {
         this.router.navigate( ['/diplomesAdmin'] )
@@ -50,6 +52,7 @@ export class CreatediplomeComponent implements OnInit {
 
 
   public update (): void {
+    console.log( this.diplome );
     this.diplomeService.update( this.diplome ).subscribe(
       resp => {
         this.router.navigate( ['/diplomesAdmin'] );
